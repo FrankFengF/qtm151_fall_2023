@@ -6,15 +6,18 @@
 <font size = "5">
 Print your name below
 -- SQLBook: Code
+-- Active: 1698523878787@@127.0.0.1@5432@postgres
 -- Write your own code
-
+DROP TABLE IF EXISTS names;
+CREATE TABLE names (name varchar(30));
+INSERT INTO names  VALUES ('2513111');
 -- SQLBook: Markup
 <font size = "5">
 
 (a) Create a new SQL database called formula1
 -- SQLBook: Code
 -- Write your own code
-
+CREATE DATABASE formula1;
 -- SQLBook: Markup
 
 <font size = "5">
@@ -70,7 +73,9 @@ Hints:
 - In SQL use single quotes for logical conditions with strings '...'
 -- SQLBook: Code
 -- Write your own code
-
+SELECT * FROM drivers
+WHERE nationality = 'American'
+ORDER BY surname ASC;
 -- SQLBook: Markup
 <font size = "5">
 
@@ -86,7 +91,8 @@ HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
 -- Write your own code
-
+SELECT COUNT(DISTINCT 'driverId') AS num_distinct_driverId    
+FROM drivers;
 -- SQLBook: Markup
 <font size = "5">
 
@@ -102,7 +108,11 @@ HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
 -- Write your own code
-
+SELECT "driverId",
+       AVG(milliseconds) AS mean_milliseconds
+FROM lap_times
+GROUP BY "driverId"
+ORDER BY mean_milliseconds ASC;
 -- SQLBook: Markup
 <font size = "5">
 
@@ -119,3 +129,7 @@ HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
 -- Write your own code
+SELECT * 
+FROM lap_times
+LEFT JOIN drivers
+ON lap_times."driverId"  = drivers."driverId";
