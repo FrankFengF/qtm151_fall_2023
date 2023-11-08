@@ -8,9 +8,7 @@ Add a comment with your Emory ID below
 -- SQLBook: Code
 -- Active: 1698523878787@@127.0.0.1@5432@postgres
 -- Write your own code
-DROP TABLE IF EXISTS names;
-CREATE TABLE names (name varchar(30));
-INSERT INTO names  VALUES ('2513111');
+# 2513111
 -- SQLBook: Markup
 <font size = "5">
 
