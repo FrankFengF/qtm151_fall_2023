@@ -48,6 +48,7 @@ DROP TABLE IF EXISTS drivers;
 
 Create empty table from codebook
 -- SQLBook: Code
+-- Active: 1698523878787@@127.0.0.1@5432@postgres
 -- Create empty TABLE called "drivers"
 -- This example has five arguments separated by a comma
 -- that contain the "column_name" and "column_type", respectively
@@ -63,12 +64,13 @@ CREATE TABLE drivers(
 
 Add rows to table
 -- SQLBook: Code
+-- Active: 1698523878787@@127.0.0.1@5432@postgres
 -- "INSET INTO" adds rows with VALUES ... to the bottom of the table
 -- In SQL different lines need to be separated by a semicolon ";"
 -- You write system commands in capital letters to easily distinguish
 -- column names from system commands
 
-INSERT INTO drivers  VALUES (1, 'Lewis Hamilton','British',103);
+INSERT INTO drivers  VALUES (1, 'Lewis Hamilton','British');
 
 INSERT INTO drivers  VALUES (4, 'Fernando Alonso', 'Spanish',32);
 
@@ -210,6 +212,7 @@ GROUP BY nationality;
 
 Subsetting **after** aggregating
 -- SQLBook: Code
+-- Active: 1698523878787@@127.0.0.1@5432@postgres
 -- This command computes the same table as above
 -- then filters with HAVING
 -- HAVING is the command you use to subset *after* aggregating
